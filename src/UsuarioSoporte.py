@@ -10,4 +10,4 @@ class UsuarioSoporte(Persona):
         self.vulnerabilidades_a_remediar= list(vulnerabilidades_a_remediar)
 
     def agregarVulnerabilidad(self, vulnerabilidad):
-        self.vulnerabilidades_a_aprobar.append(vulnerabilidad)
+        self.vulnerabilidades_a_remediar.append(vulnerabilidad)
