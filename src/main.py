@@ -17,9 +17,12 @@ class SensorService(SMWinservice) :
         self.isrunning = False
 
     def main(self) :
-
-        if self.isrunning :
-            Sensor.sensor()
+        observer = Sensor.create_observer()
+        Sensor.sensor(observer)
+        while True :
+            if not self.isrunning:
+                Sensor.stop_sensor(observer)
+                break
 
 
 if __name__ == '__main__' :
