@@ -2,6 +2,7 @@ import time
 import random
 from pathlib import Path
 from SMWinservice import SMWinservice
+import Sensor
 
 
 class SensorService(SMWinservice) :
@@ -16,12 +17,10 @@ class SensorService(SMWinservice) :
         self.isrunning = False
 
     def main(self) :
-        while self.isrunning :
-            random.seed()
-            x = random.randint(1, 1000000)
-            Path(f'c:{x}.txt').touch()
-            time.sleep(5)
+
+        if self.isrunning :
+            Sensor.sensor()
 
 
 if __name__ == '__main__' :
-    PythonCornerExample.parse_command_line()
+    SensorService.parse_command_line()

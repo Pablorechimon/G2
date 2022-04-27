@@ -3,7 +3,9 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 def on_created(event):
-    print(f"NEW FILE: {event.src_path}")
+    f = open("log.txt", "a")
+    f.write(f"NEW FILE: {event.src_path}")
+    f.close()
 
 def sensor():
     event_handler = FileSystemEventHandler()
@@ -15,8 +17,8 @@ def sensor():
     
     observer.start()
     try:
-        while True:
+        while observer.is_alive():
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
-    observer.join()
+        observer.join()

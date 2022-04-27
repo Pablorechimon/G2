@@ -26,6 +26,12 @@ pipenv install
 ```
 4- Instalar el servicio
 
+Copiar archivo C:\Python310\Lib\site-packages\pywin32_system32\pywintypes36.dll y pegar en C:\Program Files\Python36\Lib\site-packages\win32.
+Si se usa Pipenv, agregarlo en la ruta creada del ambiente virtual.
+```
+pipenv run python main.py install
+```
+
 
 ## **Documentos**
 **Documento Original:**  [Overleaf](https://www.overleaf.com/7758666758fxnwvhwbnjwn)
