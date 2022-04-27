@@ -1,7 +1,2 @@
-class Cleaner :
-    def __init__(self, archivo) :
-        self.archivo = archivo
-
-    def limpiarDatos(self) :
-        return "Archivo Limpio"
-
+def clean(file):
+    print("Limpiando archivo")    
